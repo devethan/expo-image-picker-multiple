@@ -22,7 +22,7 @@ export default class ImageBrowser extends React.Component {
   }
 
   state = {
-    hasCameraPermission: null,
+    // hasCameraPermission: null,
     hasCameraRollPermission: null,
     numColumns: null,
     photos: [],
@@ -42,10 +42,10 @@ export default class ImageBrowser extends React.Component {
   }
 
   getPermissionsAsync = async () => {
-    const {status: camera} = await Permissions.askAsync(Permissions.CAMERA);
+    // const {status: camera} = await Permissions.askAsync(Permissions.CAMERA);
     const {status: cameraRoll} = await Permissions.askAsync(Permissions.CAMERA_ROLL);
     this.setState({
-      hasCameraPermission: camera === 'granted',
+      // hasCameraPermission: camera === 'granted',
       hasCameraRollPermission: cameraRoll === 'granted'
     });
   }
@@ -159,8 +159,8 @@ export default class ImageBrowser extends React.Component {
   }
 
   render() {
-    const {hasCameraPermission} = this.state;
-    if (!hasCameraPermission) return this.props.noCameraPermissionComponent || null;
+    // const {hasCameraPermission} = this.state;
+    // if (!hasCameraPermission) return this.props.noCameraPermissionComponent || null;
 
     return (
       <View style={styles.container}>
